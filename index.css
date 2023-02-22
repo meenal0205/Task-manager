@@ -1,0 +1,33 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#edit{
+    visibility: hidden;
+}
+
+.heading{
+height: 40px;
+width: 1300px;
+text-align: center;
+}
+.input{
+    height: 40px;
+width: 1300px;
+text-align: center;
+}
+
+.Sections
+{
+    display: flex;
+    flex-direction: row;
+
+    
+    
+}
+.Todo{
+    padding: 10px 400px;
+}
+.done{
+padding: 10px 200px
+}
