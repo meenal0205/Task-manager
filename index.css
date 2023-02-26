@@ -1,24 +1,47 @@
 *{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url("cool-background (1).png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 #edit{
     visibility: hidden;
 }
 
+#addTxt{
+    height: 20px;
+    width: 150px;
+    border-radius: 5px;
+
+}
+
+
+
 .heading{
 height: 40px;
-width: 1300px;
+width: 1375px;
 text-align: center;
+
 }
 .input{
     height: 40px;
-width: 1300px;
-text-align: center;
+    width: 1360px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px ;
+    row-gap: 14px;
+    align-items: center;
 }
+
 
 .Sections
 {
+    margin: 20px 10px;
     display: flex;
     flex-direction: row;
 
@@ -26,8 +49,47 @@ text-align: center;
     
 }
 .Todo{
-    padding: 10px 400px;
+    padding: 10px 300px;
 }
 .done{
-padding: 10px 200px
+padding: 10px 300px
+}
+.button {
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 6px 11px;
+    border: 1px solid #274da1;
+    border-radius: 10px;
+    background: #504aff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#504aff), to(#268699));
+    background: -moz-linear-gradient(top, #504aff, #268699);
+    background: linear-gradient(to bottom, #504aff, #268699);
+    font: normal normal bold 12px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:hover,
+.button:focus {
+    border: 1px solid #3e7bff;
+    background: #6059ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6059ff), to(#2ea1b8));
+    background: -moz-linear-gradient(top, #6059ff, #2ea1b8);
+    background: linear-gradient(to bottom, #6059ff, #2ea1b8);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:active {
+    background: #302c99;
+    background: -webkit-gradient(linear, left top, left bottom, from(#302c99), to(#268699));
+    background: -moz-linear-gradient(top, #302c99, #268699);
+    background: linear-gradient(to bottom, #302c99, #268699);
+}
+
+
+.elements{
+    width: 60px;
+    gap: 10px;
 }
