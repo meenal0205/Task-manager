@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
-    <script src="https://kit.fontawesome.com/aecffd8ade.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://kit.fontawesome.com/aecffd8ade.css" crossorigin="anonymous">
+
+ 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@800&family=Italianno&family=Poppins&display=swap" rel="stylesheet">
@@ -22,11 +22,14 @@
         <div id="notes">
             
             <div class="input">
+                <input name="desc" id="addTxt" {taskinput}></input>
+                <input name="txt" type="text" id="editText" {saveindex} hidden >
+                <button id="addBtn" class="button" {add} >Add note</button>
+                <button id="editChange" style="display: none;" {save} >Update</button>
 
-                <input name="desc" id="addTxt"></input>
-                <button id="addBtn" class="button" >Add note</button>
-    
             </div>
+            
+               
            
             <div class="Sections">
                 <div class="Todo">
@@ -49,11 +52,7 @@
         </div>
        </div>
 
-       <div id="edit">
-        <input name="txt" type="text" id="editText" >
-        
-        <button id="editChange"    >Update</button>
-       </div>
+     
 
     </section>
     <footer>
