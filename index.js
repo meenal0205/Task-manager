@@ -1,6 +1,5 @@
-
-
 showNotes();
+let taskinput= document.getElementById('addTxt');
 let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function (e) {
   let addTxt = document.getElementById("addTxt");
@@ -32,21 +31,19 @@ function showNotes() {
   notesObj.forEach(function (element, index) {
     html += `<div >
                 <div >
-                    <h5 class>
-                        Note ${index + 1}
-                    </h5>
+                    
                     <p > 
-                        ${element}
+                        ${index+1}. ${element}
                     </p>
    
                   <button id="${index}" onclick="deleteNote(this.id)" >
-                    Delete Note
+                    Delete
                     </button>
-                    <button id="${index}" onclick="update(this.id)" >
+                    <button id="${index}" onclick="update(${index})" >
                     Update 
                     </button>
                     <button id="${index}" onclick="markAsDone(this.id)" >
-                    mark as done
+                    Done
                 </button>
 
                 </div>
@@ -114,12 +111,9 @@ function showDone() {
     notesObj.forEach(function (element, index) {
       html += `<div >
                   <div >
-                      <h5 class>
-                          Note ${index + 1}
-                      </h5>
-                      <p > 
-                          ${element}
-                      </p>
+                  <p > 
+                  ${index+1}. ${element}
+              </p>
                       <button id="${index}" onclick="deleteDone(this.id)" >
                       Delete Note
                     </button>
@@ -155,34 +149,26 @@ function deleteDone(index){
 }
 
 function update(index){
-  document.getElementById("edit").style.visibility="visible";
-  updatebutton=document.getElementById("editChange");
-  updatebutton.addEventListener("click",function(){
-    let notes = localStorage.getItem("notes");
- 
-   
-    let notesObj = JSON.parse(notes);
-    console.log(notesObj);
-    notesObj.splice(index, 1);
-    notesObj.push(document.getElementById("editText").value);
-
-    localStorage.setItem("notes", JSON.stringify(notesObj));
-
-    document.getElementById("edit").style.visibility="hidden";
-
-    document.getElementById("editText").value="";
-   
-        
-   
-    
- 
-    console.log(notesObj);
-    showNotes();
-   
   
+  let saveindex = document.getElementById("editText");
+  let addtaskbtn = document.getElementById("addBtn");
+  let savetaskbtn = document.getElementById("editChange");
+  saveindex.value = index;
+  let webtask = localStorage.getItem("notes");
+  let taskObj = JSON.parse(webtask); 
   
-  })
-
-  
-  
+  taskinput.value = taskObj[index];
+  addtaskbtn.style.display="none";
+  savetaskbtn.style.display="inline-block";
 }
+
+let savetaskbtn = document.getElementById("editChange");
+savetaskbtn.addEventListener("click", function(){
+   let webtask = localStorage.getItem("notes");
+   let taskObj = JSON.parse(webtask); 
+   let saveindex = document.getElementById("editText").value;
+   taskObj[saveindex]=taskinput.value;
+   localStorage.setItem("notes",JSON.stringify(taskObj));
+   showNotes();
+   
+})
